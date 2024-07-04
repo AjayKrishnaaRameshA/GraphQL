@@ -1,0 +1,25 @@
+type Employee{
+	id: ID!
+	name: String!
+	team : Team!
+}
+
+enum Team{
+	HR
+	PRODUCT
+	TECHNICAL
+	MARKETING
+	MANAGEMENT
+	
+}
+
+type Query{
+	findAll :[Employee]
+	findOne(id: ID!): Employee
+}
+
+type Mutation{
+	createEmployee(name : String!, team : Team): Employee
+	updateEmployee(id : ID!, name : String, team : Team): Employee
+	deleteEmployee(id : ID!): Employee
+}
